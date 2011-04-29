@@ -1,0 +1,13 @@
+%rebase layout title="Grade Specific Problem"
+<div id="box">
+<h2>Problem Selection</h2>
+<form method="POST" action="">
+      <select name="problem">
+      % for problem in problems:
+ 	       <option value={{problem}}>{{problem}}</option>
+      % end
+      </select>
+      <input type="submit" value="select"/>
+      <br/>
+</form>
+</div>
