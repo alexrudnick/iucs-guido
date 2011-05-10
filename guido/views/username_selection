@@ -1,0 +1,13 @@
+%rebase layout title=title
+<div id="box">
+<h2>Student Selection</h2>
+<form method="POST" action={{target}}>
+      <select name="username">
+      % for username in usernames:
+ 	       <option value={{username}}>{{username}}</option>
+      % end
+      </select>
+      <input type="submit" value="select"/>
+      <br/>
+</form>
+</div>
