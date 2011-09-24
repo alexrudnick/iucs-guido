@@ -1,0 +1,13 @@
+# use glob syntax.
+syntax: glob
+
+*.elc
+*.pyc
+*~
+.*.swp
+.DS_Store
+guido/guidodb
+anonymized
+
+# switch to the regex syntax
+syntax: regexp

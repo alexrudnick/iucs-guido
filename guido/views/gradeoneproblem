@@ -1,0 +1,24 @@
+%include gradeheader title='grading the problem', past_comments=past_comments
+<div id="bigContainer">
+  %include toolbar studentbutton="/grade/" + assignment + "/" + problem, prevstudent=prevstudent, nextstudent=nextstudent, assignment=assignment, choice="problem", grades=grades, default_grade=default_grade
+  <!-- left -->
+<div id="sidebyside">
+  <div class="student">
+    <h4 class="section-title">{{assignment}} :: Problem {{problem}} :: {{student}}</h4>
+    <iframe id="studentframe" 
+            src="/solutionframe/{{assignment}}/{{problem}}/{{student}}">
+    </iframe>
+     <div id="tools">
+      <form method="GET" action="/guido/codesearch/">
+        <input type="hidden" id="student" name="student" value="{{student}}"/>
+        <input type="hidden" id="problem" name="problem" value="{{problem}}"/>
+        <input type="hidden" id="assignment" name="assignment" value="{{assignment}}"/>
+        <input name="query" type="textbox" /> 
+        <button id="searchbutton">Search code</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- right -->
+  %include autograderreport autograder=autograder
+</div>

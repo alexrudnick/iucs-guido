@@ -1,0 +1,15 @@
+%include gradeheader title='grading submission by problem', past_comments=past_comments
+<div id="bigContainer">
+ %include toolbar studentbutton="/grade/" + assignment, prevstudent=prevstudent, nextstudent=nextstudent, assignment=assignment, choice="submission", grades=grades, default_grade=default_grade
+<div id="sidebyside">
+  <!-- left -->
+  <div class="student">
+    <h4 class="section-title">{{assignment}} :: {{student}}</h4>
+    <iframe id="studentframe" src="/framesbp/{{assignment}}/{{student}}"></iframe>
+  </div>
+
+  <!-- right -->
+  %include autograderreport autograder=autograder
+</div> 
+</div>
+</div>
