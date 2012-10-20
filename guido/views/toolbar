@@ -1,0 +1,51 @@
+<script type="text/javascript">
+    $(function() {
+        var pathArray = location.pathname.split('/');
+        newPathname = "";
+        for ( i = 1; i < pathArray.length -1; i++ ) {
+            newPathname += "/";
+            newPathname += pathArray[i];
+        }
+
+        var nextstudenthref = newPathname + "/" + "{{nextstudent}}";
+        var prevstudenthref = newPathname + "/" + "{{prevstudent}}";
+        
+        $("#prevstudentbutton").attr("href", prevstudenthref);
+        $("#nextstudentbutton").attr("href", nextstudenthref);
+    });     
+</script>
+
+<div id="toolbar">
+  <div id="gradingtoolbar">
+    <form id="formGrade" method="POST" action="" autocomplete="off">
+      <ul id="grades">
+        % for grade in grades:
+        % if default_grade == grade:
+        <li class="ui-selected" value="{{default_grade}}"><a href="#">{{default_grade}}</a></li>
+        % else:
+        <li value="{{grade}}"><a href="#">{{grade}}</a></li>
+        % end
+        % end
+      </ul>
+        <input type="hidden" id="submit_grade" name="grade" value="None" />
+        <button id="gradebutton">grade</button>
+    </form>
+  </div>
+  <div id="gradingnav">
+    <ul class="nav">
+      % if prevstudent != None:
+      <a id="prevstudentbutton" >previous student</a>
+      % else:
+      <span class="notalink">previous student</span>
+      %end
+      % if nextstudent != None:
+      <a id="nextstudentbutton" >next student</a>
+      % else:
+      <span class="notalink">next student</span>
+      % end
+    </ul>
+    <ul class="nav">
+      <a id="menu" href="/">main menu</a>
+    </ul>
+  </div>
+</div>

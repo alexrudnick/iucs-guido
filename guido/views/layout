@@ -1,0 +1,58 @@
+%include header title="Guido"
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<body>
+<div id="guido">
+<div class="logo">
+<span class="logo"></span>
+ </div>
+ <div class="container">
+  <ul class="nav_container">
+    <li>
+    <h3 class="section-title">Grade</h3>
+    <ul class="nav">
+      <li><a href="/grade_whole/pick">submission by student</a></li>
+      <li><a href="/none">problem by student</a></li>
+      <li><a href="/none">post problem by student</a></li>
+      </ul>
+   </li>
+   <li>
+  <h3 class="section-title">Reports</h3>
+    <ul class="nav">
+      <li><a href="/gradingreport">reports to students</a></li>
+      <li><a href="/csv_grades">grades by csv</a></li>
+      <li><a href="/none">send all reports</a></li>      
+    </ul>
+  </li>
+  <li>
+  <h3 class="section-title">Admin</h3>
+    <ul class="nav">
+      <li><a href="/assignment_notes">assignment notes</a></li>
+      <li><a href="/none">problem notes</a></li>
+      <li><a href="/edit_database">database entries</a></li>
+      <li><a href="/none">statistics</a></li>
+    </ul>
+  </li>
+  <li>
+  <h3 class="section-title">Guido</h3>
+    <ul class="nav">
+      <li><a href="http://code.google.com/p/iucs-guido/" target="_blank">about</a></li>
+      <li><a href="/settings">settings</a></li>
+      <li><a href="/none">help</a></li>
+    </ul>
+  </li>
+</div>
+<div class="content_container">
+   <div class="content_header"> <h1 class="section-title">{{title}}</h1> </div>
+	<div class="content">
+           %include
+        </div>
+   </div>
+</div>
+%include byline
+</body>
+</html>
